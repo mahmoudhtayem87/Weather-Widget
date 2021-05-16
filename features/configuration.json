@@ -1,0 +1,25 @@
+{
+    "$schema": "https://raw.githubusercontent.com/liferay/liferay-js-toolkit/master/resources/schemas/configuration.schema.json",
+    "system": {
+        "category": "Weather-Widget",
+        "name": "Weather-Widget",
+        "fields": {
+            "APIKey": {
+                "type": "string",
+                "name": "APIKey",
+                "description": "API Key",
+                "default": "c30cfbd3b3684aa2b8372523211605"
+            }
+        }
+    },
+    "portletInstance": {
+        "fields": {
+            "Location": {
+                "type": "string",
+                "name": "Location",
+                "description": "Location",
+                "default": "Dubai"
+            }
+        }
+    }
+}

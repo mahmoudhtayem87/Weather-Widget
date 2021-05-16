@@ -1,0 +1,18 @@
+<div *ngIf="WeatherData == null">
+    Loading Data...
+</div>
+<div id="weather_wrapper" *ngIf="WeatherData != null">
+    <div class="weatherCard">
+        <div class="currentTemp">
+            <span class="temp">{{WeatherData.current.temp_c}}&deg;</span>
+            <span class="location">{{WeatherData.location.name}}</span>
+        </div>
+        <div class="currentWeather" style="display: flex;">
+            <img style="margin: auto;padding-bottom: 80px!important;width: 150px!important;" src="{{WeatherData.current.condition.icon}}" />
+            <div class="info" style="height: 60px!important;">
+                <span class="rain">{{WeatherData.current.humidity}} %</span>
+                <span class="wind">{{WeatherData.current.gust_mph}} MPH</span>
+            </div>
+        </div>
+    </div>
+</div>
