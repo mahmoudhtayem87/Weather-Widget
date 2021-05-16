@@ -8,7 +8,6 @@ You will need to configure your API Key at the system level, and the required lo
 
 Weatherapi allows you to use a free account which gives you around 1,00,000 call per month.
 https://www.weatherapi.com/api-explorer.aspx
-![image](https://user-images.githubusercontent.com/77802068/118394857-42dba400-b658-11eb-9764-89d4299316d0.png)
 
 # Configurations
 
