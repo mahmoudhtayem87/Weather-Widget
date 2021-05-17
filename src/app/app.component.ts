@@ -32,6 +32,14 @@ export class AppComponent implements AfterViewInit {
 	{
 		return this.params.configuration.portletInstance.Location;
 	}
+	get CurrentLocationAPIKey()
+	{
+		return this.params.configuration.system["CurrentLocationAPIKey"];
+	}
+	get UseCurrentLocation()
+	{
+		return this.params.configuration.portletInstance["UseCurrentLocation"] as boolean;
+	}
 	public getCurrentWeatherData()
 	{
 		var key = this.APIKey;
@@ -42,7 +50,30 @@ export class AppComponent implements AfterViewInit {
 			this.WeatherData = result;
 		});
 	}
+	public getCurrentWeatherDataByLatLNG(Region:any)
+	{
+		var key = this.APIKey;
+		var location = this.Location;
+		this.http
+		.get("http://api.weatherapi.com/v1/current.json?key="+key+"&q="+Region+"&aqi=yes")
+		.subscribe(result=>{
+			this.WeatherData = result;
+		});
+	}
 	public ngAfterViewInit() {
+		console.log(this.UseCurrentLocation);
+		if(!this.UseCurrentLocation)
 		this.getCurrentWeatherData();
+		else
+		this.getCurrentLocation();
+	}
+	public getCurrentLocation()
+	{
+
+		this.http.get("http://ip-api.com/json/?fields=status,message,countryCode,region,regionName")
+		.subscribe(result=>{
+			console.log(result);
+			this.getCurrentWeatherDataByLatLNG(result["regionName"]);
+		});
 	}
 }
