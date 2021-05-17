@@ -32,10 +32,7 @@ export class AppComponent implements AfterViewInit {
 	{
 		return this.params.configuration.portletInstance.Location;
 	}
-	get CurrentLocationAPIKey()
-	{
-		return this.params.configuration.system["CurrentLocationAPIKey"];
-	}
+	
 	get UseCurrentLocation()
 	{
 		return this.params.configuration.portletInstance["UseCurrentLocation"] as boolean;
@@ -61,7 +58,7 @@ export class AppComponent implements AfterViewInit {
 		});
 	}
 	public ngAfterViewInit() {
-		console.log(this.UseCurrentLocation);
+		
 		if(!this.UseCurrentLocation)
 		this.getCurrentWeatherData();
 		else

@@ -9,12 +9,6 @@
                 "name": "APIKey",
                 "description": "API Key",
                 "default": "c30cfbd3b3684aa2b8372523211605"
-            },
-            "CurrentLocationAPIKey": {
-                "type": "string",
-                "name": "CurrentLocationAPIKey",
-                "description": "Current Location API Key",
-                "default": "ddb1ac97518f9418518fbd909d07282f"
             }
         }
     },
